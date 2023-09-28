@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: black;
+}
+html {
+  scroll-behavior: smooth; /*buat scrol jadi smooth*/
+}
+nav {
+  height: 65px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+nav h1 {
+  display: inline-block;
+  padding: 14px 24px;
+  font-size: 28px;
+}
+a {
+  text-decoration: none;
+}
+nav h1 a:hover {
+  /* buat animasi tulisan dzul fikar */
+  color: rgb(7, 247, 247);
+  transition: 0, 85s;
+}
+nav ul {
+  float: right;
+}
+nav ul li {
+  padding: 20px;
+  display: inline-block;
+  margin: 0;
+}
+nav ul li a {
+  text-decoration: none;
+}
+nav ul li a:hover {
+  /*buat animasi hover navbar */
+  border-bottom: 3px solid black;
+  transition: 0, 85s;
+}
+.wrapper {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(226, 231, 236, 0.9);
+}
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+.container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mobile-menu:hover {
+  color: aqua;
+}
+.mobile-menu {
+  padding: 17px auto;
+  cursor: pointer;
+  float: right;
+  padding: 16px;
+  font-size: 25px;
+  display: none;
+  transition: 0.1s;
+}
+
+#check {
+  /* buat tulisan checkbox hilang */
+  display: none;
+}
+#check:checked ~ .sidebar {
+  /*agar icon side bar bisa di klik*/
+  left: 0;
+}
+@media (max-width: 768px) {
+  /*responsive menu*/
+  .mobile-menu {
+    /*buat menu ada ketika dikecilkan*/
+    display: block; /*buat menu ada ketika dikecil*/
+  }
+  nav ul {
+    display: none; /*buat navbar hilang ketika dikecilkan*/
+  }
+  .col-4 {
+    width: 50%;
+  }
+}
+.sidebar {
+  /*background side bar*/
+  /* dikasi posisision absulute biar ketikda dis scrooll dia tetap diatas */
+  /* beda dengan fixed yang selalu ada ketika di scroll */
+  position: absolute;
+  height: 750px;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  width: 220px;
+  position: fixed;
+  margin-top: 60px;
+
+  background-color: rgba(6, 121, 243, 0.9);
+  transition: 1.5s;
+}
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  position: fixed;
+}
+.sidebar ul li {
+  padding: 20px;
+  transition: 1s;
+  transition-property: background-color;
+}
+.sidebar ul li:hover {
+  background-color: #f84744;
+}
+
+.banner {
+  /* style pada section*/
+  background-color: white;
+  padding: 150px 0;
+}
+
+section {
+  padding: 75px 0; /*ngatur jarak lebar luas biru biru*/
+}
+.banner img {
+  /*style gambar pada halaman section*/
+  width: 130px; /*ngatur lebar gambar*/
+  border-radius: 50% 0 50%; /*buat bingkai foto*/
+  box-shadow: 0 3px 2px rgb(8, 237, 237); /*buat cahaya cahaya di foto */
+  margin-bottom: 50px; /*ngatur jarak gambar dari bawah*/
+  margin-top: -60px;
+}
+.banner h2,
+.banner p,
+.banner span {
+  color: black;
+}
+.banner p {
+  font-size: 18px;
+}
+.banner h2 {
+  margin-bottom: 10px;
+}
+.banner-left {
+  /*ngatur jarak content dalam banner*/
+  padding-left: 24px;
+}
+h3 {
+  padding-bottom: 50px;
+  margin: 60px;
+  text-align: center;
+  position: relative;
+}
+#about p {
+  text-align: justify;
+  text-indent: 30px;
+  font-family: arial;
+}
+#skills {
+  /*style section skilss*/
+  background-color: #f9f9f9;
+}
+#skills .bar {
+  /*buat bar di bagian skills*/
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid;
+  margin: 5px 0 20px 0;
+}
+.bar-html .nilai {
+  /*buat progress bar*/
+  height: 30px;
+  width: 90%;
+  background-color: #f84744;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+}
+.bar-css .nilai {
+  /*buat progress bar*/
+  height: 30px;
+  width: 60%;
+  background-color: #f84744;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+}
+.bar-javascript .nilai {
+  /*buat progress bar*/
+  height: 30px;
+  width: 20%;
+  background-color: #f84744;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+}
+.nilai span {
+  /*buat progress bar*/
+  color: #fff;
+  text-align: center;
+}
+.col-4 {
+  /*style galery*/
+  width: 25%;
+  box-sizing: border-box;
+  float: right;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.col-4 img {
+  /*style image*/
+  width: 100%;
+  flex: 0 0 250px;
+
+  height: 200px;
+  border-radius: 50%; /*buat bingkai foto*/
+  box-shadow: 0 3px 5px rgb(8, 237, 237);
+}
+.col-4 a:hover img {
+  /*buat animasi galery ketika di tekan*/
+  transform: scalex(1.2);
+}
+.col-3 {
+  /*style tulisan dalam kontact*/
+  width: 33.33%;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  padding: 50px 10px;
+}
+.col-3 h4 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15 px;
+}
+footer {
+  background-color: black;
+  padding: 15px;
+  text-align: center;
+}
+footer small {
+  color: white;
+}
